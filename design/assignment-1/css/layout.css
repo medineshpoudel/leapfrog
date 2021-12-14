@@ -41,7 +41,6 @@
   display: inline-block;
 }
 .header-search input:focus {
-  border: red;
 }
 
 .header-search-button {
