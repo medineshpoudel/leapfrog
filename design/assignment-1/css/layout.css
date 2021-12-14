@@ -40,8 +40,6 @@
   position: absolute;
   display: inline-block;
 }
-.header-search input:focus {
-}
 
 .header-search-button {
   display: inline-block;
@@ -277,6 +275,4 @@
   float: right;
   margin-top: -21px;
   margin-right: -2px;
-}
-.center {
 }
