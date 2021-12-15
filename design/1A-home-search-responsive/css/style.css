@@ -1,0 +1,97 @@
+/* text sizes */
+.xl-heading {
+  font-size: 1.62rem;
+}
+.l-heading {
+  font-size: 1.25rem;
+}
+.m-heading {
+  font-size: 0.87rem;
+}
+.s-heading {
+  font-size: 0.75rem;
+}
+.xs-heading {
+  font-size: 0.62rem;
+}
+.author,
+.subscribed,
+.topic-box,
+.alert {
+  font-weight: 800;
+}
+/* color */
+.red-color {
+  color: #d43f1f;
+}
+.blue-color {
+  color: #4daebe;
+}
+.green-color {
+  color: #719720;
+}
+
+.h {
+  margin-left: 110px;
+}
+
+.foot-dot {
+  font-weight: 900;
+}
+.menu-heading {
+  font-size: 1.62rem;
+}
+
+/* nav item hover */
+.nav-item:hover {
+  color: #959595;
+}
+.nav-list a {
+  color: #464646;
+  text-decoration: none;
+}
+.notification-list a {
+  color: #464646;
+  text-decoration: none;
+}
+.notification-list a:hover {
+  color: #959595;
+}
+.header-profile a {
+  color: #333132;
+  text-decoration: none;
+}
+.menu-left a {
+  color: #292929;
+  text-decoration: none;
+}
+.menu-right a {
+  color: #292929;
+  text-decoration: none;
+}
+.menu-left a li:hover,
+.menu-right a li:hover {
+  background-color: #ffffff;
+}
+.content-heading a {
+  color: #0b0b0b;
+  text-decoration: none;
+}
+.author a,
+.topic-box a {
+  color: #4eafc0;
+  text-decoration: none;
+}
+.input:focus {
+  outline: none;
+}
+#footer a {
+  text-decoration: none;
+  color: #c0c0c0;
+}
+.active {
+  color: white;
+}
+.blue-container {
+  background-color: #2fc1da;
+}
