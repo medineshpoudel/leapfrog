@@ -1134,6 +1134,7 @@
   }
   .item-1 {
     width: 30%;
+    cursor: pointer;
   }
   .item-2 {
     width: 50%;
@@ -1152,6 +1153,7 @@
 
   .foooter-item li img {
     margin-right: 30px;
+    cursor: pointer;
   }
   /* footer section ends */
 }
