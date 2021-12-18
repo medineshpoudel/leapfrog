@@ -665,6 +665,7 @@
     margin-top: -2px;
   }
   .menu-center {
+    position: fixed;
     height: 605px;
     width: 42%;
     background: #ffffff;
@@ -712,6 +713,10 @@
   }
   .tabb {
     padding-top: 8px;
+  }
+  .footer-wrapper {
+    top: 750px;
+    position: absolute;
   }
   #footer {
     width: 70%;

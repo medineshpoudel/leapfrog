@@ -1,0 +1,83 @@
+/* font sizes */
+.xl-heading {
+  font-size: 2.75rem;
+  font-weight: 700;
+}
+.l-heading {
+  font-size: 1.75rem;
+}
+.m-heading {
+  font-size: 1.25rem;
+}
+.s-heading {
+  font-size: 1rem;
+}
+.xs-heading {
+  font-size: 1rem;
+}
+/* colors */
+.color-primary {
+  color: #0a225f;
+}
+.color-secondary {
+  color: #1443bd;
+}
+.color-tertiary {
+  color: #ffff;
+}
+.color-white {
+  color: #ffff;
+}
+.center {
+  text-align: center;
+}
+
+/* normal css starts here */
+.btn-primary {
+  display: inline-block;
+  border: 1px solid #1341b6;
+  width: 181px;
+  height: 56px;
+  border-radius: 5px;
+  padding: 14px 24px;
+  margin-right: 1rem;
+  margin-top: 20px;
+  background-color: #1443bd;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 20px;
+}
+.btn-secondary {
+  display: inline-block;
+  width: 181px;
+  height: 56px;
+  border-radius: 5px;
+  padding: 14px 24px;
+  margin-right: 1rem;
+  margin-top: 20px;
+  background-color: #ffff;
+  color: #2a84c6;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.btn-primary:hover {
+  background-color: #1341b6;
+  color: #ffff;
+}
+
+.btn-white {
+  display: inline-block;
+  border: 1px solid #94c1e2;
+  background-color: #ffff;
+  border-radius: 5px;
+  width: 184px;
+  height: 36px;
+  padding: 8px 64px;
+  margin-top: 20px;
+  color: #1341b6;
+  font-weight: 700;
+  font-size: 14px;
+}
