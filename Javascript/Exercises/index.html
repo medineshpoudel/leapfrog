@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Exercises</title>
+  </head>
+  <script src="exercise-1.js"></script>
+  <script src="exercise-2.js"></script>
+  <script src="exercise-3.js"></script>
+
+  <body>
+    <!-- exercise 1 -->
+    <h1>Exercise 1</h1>
+    <p>
+      const pattern = (n) => { <br />
+      for (let i = 0; i < n; i++) { <br />
+      let asterisks = "";<br />
+      for (let j = i; j < n; j++) { <br />
+      asterisks += "*"; <br />
+      } <br />
+      console.log(asterisks); <br />
+      }<br />
+      };<br />
+      pattern(5);<br />
+    </p>
+    <!-- exercise 2 -->
+
+    <h1>Exercise 2</h1>
+    const myObject = { <br />
+    name: "Dinesh Poudel", <br />
+    address: "Manamaiju, Kathmandu", <br />
+    emails: ["dineshpoudel58@gmail.com"], <br />
+    interests: ["Coding", "Football", "Gaming"], <br />
+    education: [ <br />
+    { <br />
+    name: "Jagat Mandir School", <br />
+    date: 2002, <br />
+    }, <br />
+    { <br />
+    name: "Kathmandu University", <br />
+    date: 2017, <br />
+    }, <br />
+    ], <br />
+    }; <br />
+    <br />
+    <br />
+    for (let i = 0; i < myObject.education.length; i++) { <br />
+    console.log( <br />
+    "Name:" + <br />
+    myObject.education[i].name + <br />
+    "," + <br />
+    "Date:" + <br />
+    myObject.education[i].date <br />
+    ); <br />
+    } <br />
+  </body>
+</html>
