@@ -1,7 +1,6 @@
-// EXERCISE 3
-
-// Write a function that searches for an object by a specific key value in an array of objects:
-
+/* EXERCISE 3
+ Write a function that searches for an object by a specific key value in an array of objects:
+*/
 var fruits = [
   { id: 1, name: "Banana", color: "Yellow" },
   { id: 2, name: "Apple", color: "Red" },

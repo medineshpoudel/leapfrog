@@ -9,7 +9,7 @@ const myObject = {
   name: "Dinesh Poudel",
   address: "Manamaiju, Kathmandu",
   emails: ["dineshpoudel58@gmail.com"],
-  interests: ["Coding", "Football", "Gaming"],
+  interests: ["Coding", "Football", "Music"],
   education: [
     {
       name: "Jagat Mandir School",
