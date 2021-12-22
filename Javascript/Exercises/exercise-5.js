@@ -28,6 +28,6 @@ function sortBy(array, key) {
   });
 }
 
-var result = sortBy(arr, "name");
+var sorted = sortBy(arr, "name");
 
-console.log("Sorted", result);
+console.log("Sorted", sorted);
