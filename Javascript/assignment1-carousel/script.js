@@ -4,8 +4,9 @@ let imageWidth = 400;
 const imageCount = images.children.length;
 container.style.border = "5px solid grey";
 container.style.borderRadius = "10px";
+container.style.top = "80px";
 
-// creting prevBtn
+// creating prevBtn
 const prevBtn = document.createElement("button");
 container.appendChild(prevBtn);
 
@@ -48,15 +49,17 @@ dotContainer.style.position = "absolute";
 const dots = [];
 for (i = 1; i <= images.children.length; i++) {
   dots[i] = document.createElement("div");
-  container.append(dots[i]);
+  container.appendChild(dots[i]);
   dots[i].style.position = "absolute";
   dots[i].style.top = `${imageWidth - 50}px`;
   dots[i].style.borderRadius = "50%";
   dots[i].style.width = "15px";
   dots[i].style.left = `${i * 18}%`;
   dots[i].style.height = "15px";
-  dots[i].style.border = "2px solid white";
+  dots[i].style.border = "1px solid white";
 }
+
+// adding event to dots
 dots.forEach((e) => {
   e.addEventListener("mouseenter", () => {
     e.classList.add("active");
