@@ -2,7 +2,7 @@ const container = document.querySelector(".carousel-container");
 const images = document.querySelector(".carousel-image-wrapper");
 let imageWidth = 400;
 const imageCount = images.children.length;
-container.style.border = "3px solid grey";
+container.style.border = "5px solid grey";
 container.style.borderRadius = "10px";
 
 // creting prevBtn

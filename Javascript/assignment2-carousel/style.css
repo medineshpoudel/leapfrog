@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.carousel-container {
+  display: inline-block;
+  top: 150px;
+  left: 150px;
+}
+
+@media (max-width: 968px) {
+  .carousel-container {
+    display: block;
+    top: 0px;
+    left: 10px;
+  }
+}
