@@ -16,9 +16,8 @@ prevBtn.style.position = "absolute";
 prevBtn.style.float = "left";
 prevBtn.style.top = "50%";
 prevBtn.textContent = "<";
-prevBtn.style.fontSize = "50px";
-prevBtn.style.fontWeight = "700";
-prevBtn.style.padding = "10px";
+prevBtn.style.fontSize = "40px";
+prevBtn.style.paddingLeft = "10px";
 prevBtn.style.border = "none";
 
 // creating nextBtn
@@ -30,10 +29,9 @@ nextBtn.style.background = "transparent";
 nextBtn.style.color = "white";
 nextBtn.style.top = "50%";
 nextBtn.style.left = "350px";
-nextBtn.style.fontSize = "50px";
-nextBtn.style.fontWeight = "700";
+nextBtn.style.fontSize = "40px";
 nextBtn.textContent = ">";
-nextBtn.style.padding = "10px";
+nextBtn.style.paddingRight = "30px";
 
 // creating images
 images.style.width = `${imageCount * imageWidth}px`;
