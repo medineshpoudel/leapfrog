@@ -160,9 +160,6 @@ class slide {
   };
 
   sliderAnimation(currentIndex, nextIndex) {
-    //Taking current and next index as argument
-    // SLIDER ANIMATION FUNCTION WITH SETINTERVAL OF WHICH RETURNS NEXT INDEX
-
     var interval = setInterval(() => {
       // To check wether toogle is taking in right or left direction
       var dx;
@@ -172,7 +169,6 @@ class slide {
         dx = -1;
       }
 
-      //Creates Animation for the slider Transition ( with given FPS (IMAGE Width * next index ))
       this.wrapperSlideWidth += -dx * (this.imageWidth / this.time);
       this.wrapper.style.left = `${this.wrapperSlideWidth}px`;
 
