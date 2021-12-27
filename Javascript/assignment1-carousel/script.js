@@ -103,7 +103,7 @@ const nextBtnHandler = function () {
     if (dx <= imageWidth) {
       interval = setInterval(() => {
         images.style.left = `-${dx}px`;
-        dx++;
+        dx = dx + 10;
         console.log(images.style.left);
         if (dx > imageWidth) {
           currentIndex++;
@@ -111,17 +111,17 @@ const nextBtnHandler = function () {
           imageWidth = imageWidth + 400;
           clearInterval(interval);
         }
-      }, 1);
+      }, 10);
     }
   } else if (currentIndex > images.children.length - 1) {
     interval = setInterval(() => {
       images.style.left = `-${dx}px`;
-      dx--;
+      dx = dx - 10;
       if (dx <= 0) {
         clearInterval(interval);
         dx = 0;
       }
-    }, 1);
+    }, 10);
 
     currentIndex = 0;
     imageWidth = 400;
@@ -137,7 +137,7 @@ const prevBtnHandler = function () {
     if (imageWidth >= dx) {
       interval = setInterval(() => {
         images.style.left = `-${imageWidth - 400}px`;
-        imageWidth--;
+        imageWidth -= 10;
 
         console.log(dx);
 
@@ -148,7 +148,7 @@ const prevBtnHandler = function () {
           console.log(currentIndex);
           clearInterval(interval);
         }
-      }, 1);
+      }, 10);
     }
   } else if (currentIndex < 0) {
     console.log(currentIndex);
