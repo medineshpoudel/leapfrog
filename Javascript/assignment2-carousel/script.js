@@ -11,7 +11,7 @@ class slide {
     this.currentIndex = 0;
     this.isSliding = false;
     this.wrapperSlideWidth = 0;
-    this.indicators = [];
+    this.dots = [];
   }
 
   // reseting css
@@ -71,28 +71,28 @@ class slide {
     this.nextBtn.style.right = "0";
   };
 
-  // creating indicators
+  // creating dots
   createDots = () => {
     for (var i = 0; i < this.count; i++) {
       this.images[i].style.float = "left";
-      this.indicator = document.createElement("div");
-      this.indicatorContainer.appendChild(this.indicator);
-      this.indicator.style.border = "1px solid white";
-      this.indicator.style.display = "inline-block";
-      this.indicator.style.height = "15px";
-      this.indicator.style.width = "15px";
-      this.indicator.style.borderRadius = "50%";
-      this.indicator.style.marginRight = "15px";
-      this.indicator.style.cursor = "pointer";
+      this.dot = document.createElement("div");
+      this.dotContainer.appendChild(this.dot);
+      this.dot.style.border = "1px solid white";
+      this.dot.style.display = "inline-block";
+      this.dot.style.height = "15px";
+      this.dot.style.width = "15px";
+      this.dot.style.borderRadius = "50%";
+      this.dot.style.marginRight = "15px";
+      this.dot.style.cursor = "pointer";
 
       // handling event click
       let a = i;
-      this.indicator.addEventListener("click", () => {
+      this.dot.addEventListener("click", () => {
         this.sliderAnimation(this.currentIndex, a);
         return (this.currentIndex = a);
       });
 
-      this.indicators.push(this.indicator);
+      this.dots.push(this.dot);
     }
   };
 
@@ -126,21 +126,21 @@ class slide {
     });
   };
 
-  //creating indicators
-  createIndicators = () => {
-    this.indicatorContainer = document.createElement("div");
-    this.indicatorContainer.className = "indicatorContainer";
-    this.indicatorContainer.style.display = "inline-block";
-    this.indicatorContainer.style.position = "absolute";
-    this.indicatorContainer.style.left = "50%";
-    this.indicatorContainer.style.transform = "translate(-37%, 0%)";
-    this.indicatorContainer.style.bottom = "15px";
-    this.container.appendChild(this.indicatorContainer);
+  //creating dots
+  createDot = () => {
+    this.dotContainer = document.createElement("div");
+    this.dotContainer.className = "dotContainer";
+    this.dotContainer.style.display = "inline-block";
+    this.dotContainer.style.position = "absolute";
+    this.dotContainer.style.left = "50%";
+    this.dotContainer.style.transform = "translate(-37%, 0%)";
+    this.dotContainer.style.bottom = "15px";
+    this.container.appendChild(this.dotContainer);
     this.createDots();
   };
 
-  indicatorActiveState = (index) => {
-    for (var i = 0; i < this.indicators.length; i++) {}
+  dotActiveState = (index) => {
+    for (var i = 0; i < this.dots.length; i++) {}
   };
 
   // sliding images with delay
@@ -170,22 +170,22 @@ class slide {
       this.wrapperSlideWidth += -dx * (this.imageWidth / this.time);
       this.wrapper.style.left = `${this.wrapperSlideWidth}px`;
 
-      // For the Right direction and sets indicator
+      // For the Right direction and sets dot
       if (dx == 1 && this.wrapperSlideWidth <= -nextIndex * this.imageWidth) {
         this.wrapper.style.left = `${-nextIndex * this.imageWidth}px`;
-        this.indicatorActiveState(nextIndex);
+        this.dotActiveState(nextIndex);
         clearInterval(interval);
         this.isSliding = false;
       }
 
-      // For the Left Direction and sets indicator
+      // For the Left Direction and sets dot
       else if (
         dx == -1 &&
         this.wrapperSlideWidth >= -nextIndex * this.imageWidth
       ) {
         this.wrapper.style.left = `${-nextIndex * this.imageWidth}px`;
         clearInterval(interval);
-        this.indicatorActiveState(nextIndex);
+        this.dotActiveState(nextIndex);
         this.isSliding = false;
       }
 
@@ -208,11 +208,10 @@ class slide {
     this.createPrevBtn();
     this.createContainer();
     this.createWrapper();
-    this.createIndicators();
+    this.createDot();
     this.prevBtnClick();
     this.nextBtnClick();
     this.slideShows();
-
     this.cssReset();
   }
 }

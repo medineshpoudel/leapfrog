@@ -146,9 +146,6 @@ const prevBtnHandler = function () {
           dx = dx - 400;
           currentIndex--;
           console.log(currentIndex);
-
-          // console.log(imageWidth);
-          // console.log(dx);
           clearInterval(interval);
         }
       }, 1);
