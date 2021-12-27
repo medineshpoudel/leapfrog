@@ -144,7 +144,7 @@ class slide {
       if (index === i) {
         this.dots[i].style.backgroundColor = "white";
       } else {
-        this.dots[i].style.backgroundColor = "";
+        this.dots[i].style.backgroundColor = "transparent";
       }
     }
   };
