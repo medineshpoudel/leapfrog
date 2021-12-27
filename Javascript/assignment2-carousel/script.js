@@ -140,7 +140,13 @@ class slide {
   };
 
   dotActiveState = (index) => {
-    for (var i = 0; i < this.dots.length; i++) {}
+    for (var i = 0; i < this.dots.length; i++) {
+      if (index === i) {
+        this.dots[i].style.backgroundColor = "white";
+      } else {
+        this.dots[i].style.backgroundColor = "";
+      }
+    }
   };
 
   // sliding images with delay
