@@ -108,7 +108,7 @@ function Ball() {
 
 let b = [];
 let fps = 60;
-let ballCount = 10;
+let ballCount = 15;
 //creating box
 for (let i = 0; i < ballCount; i++) {
   b[i] = new Ball();
