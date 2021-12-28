@@ -1,0 +1,17 @@
+.text-center {
+  text-align: center;
+}
+
+.box {
+  border-radius: 50%;
+  position: absolute;
+}
+
+.container {
+  margin: 50px auto;
+  background-color: rgb(226, 232, 235);
+  border: 2px solid black;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
