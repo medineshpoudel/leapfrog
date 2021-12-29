@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Car Lane Game</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="playScreen">
+        <h1>Car Lane Game</h1>
+        <h2>Press a,d to play</h2>
+        <button id="play" class="btn">Play</button>
+      </div>
+
+      <div class="score-speed text-center">
+        <h2>Score: <span id="score"></span></h2>
+        <h2>Car Speed: <span id="speed"></span>km/hr</h2>
+      </div>
+      <div class="game">
+        <div class="carLane"></div>
+      </div>
+      <div class="endScreen">
+        <h1>Game Over</h1>
+        <h2>Score: <span id="finalscore"></span></h2>
+        <button id="replay" class="btn">Play Again</button>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
