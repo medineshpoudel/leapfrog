@@ -15,11 +15,11 @@ let leftLane = false;
 let middleLane = false;
 let enemies = [];
 let score = 0;
-let NUMBER_OF_INSTANCES = 3;
+let number = 3;
 let finalScore = document.querySelector("#finalscore");
 let playBtn = document.querySelector("#play");
 let replayBtn = document.querySelector("#replay");
-let roadDiv = document.createElement("div");
+let laneDiv = document.createElement("div");
 let roadImg = document.createElement("img");
 let stop = [];
 let userCarLeft = 115;
@@ -75,8 +75,6 @@ function createEnemy() {
 
     //collisions with the cars
     for (let i = 0; i < enemies.length; i++) {
-      if (enemies[i] === enemy.enemyCar) continue;
-
       let car1 = {
         x: userCarLeft,
         y: 530,
@@ -148,25 +146,27 @@ function moveCar(e) {
 
 // creating the lane
 function createLane() {
-  carLane.appendChild(roadDiv);
-  roadDiv.style.position = "absolute";
-  roadDiv.style.width = "300px";
-  roadDiv.style.height = "1260px";
-  roadDiv.style.top = "-480px";
+  carLane.appendChild(laneDiv);
+  laneDiv.style.position = "absolute";
+  laneDiv.style.width = "300px";
+  laneDiv.style.height = "1260px";
+  laneDiv.style.top = "-480px";
   roadImg.setAttribute("src", "./img/lane.jpg");
   roadImg.style.height = "100%";
   roadImg.style.width = "100%";
-  roadDiv.appendChild(roadImg);
+  laneDiv.appendChild(roadImg);
 }
+
 // moving the  game lane
 function moveLane() {
-  let topOfImage = parseInt(roadDiv.style.top);
+  let topOfImage = parseInt(laneDiv.style.top);
 
+  // console.log(userCarSpeed % -topOfImage);
   if (userCarSpeed % -topOfImage === 0) {
-    roadDiv.style.top = "-480px";
+    laneDiv.style.top = "-480px";
   } else {
     topOfImage = topOfImage + userCarSpeed;
-    roadDiv.style.top = topOfImage + "px";
+    laneDiv.style.top = topOfImage + "px";
   }
 }
 
@@ -192,8 +192,9 @@ function changeSpeed() {
 
 // ending the game
 function gameEnd() {
-  for (let i = 0; i < NUMBER_OF_INSTANCES; i++) {
+  for (let i = 0; i < number; i++) {
     clearInterval(stop[i]);
+    console.log(stop[i]);
   }
   finalScore.innerText = score;
   endScreen.classList.remove("hide");
@@ -227,26 +228,16 @@ function resetGameValues() {
 
 // moving the cars
 function runCars() {
-  for (let i = 0; i < NUMBER_OF_INSTANCES; i++) {
+  for (let i = 0; i < number; i++) {
     enemyCar[i] = new createEnemy();
   }
-  for (let i = 0; i < NUMBER_OF_INSTANCES; i++) {
+  for (let i = 0; i < number; i++) {
+    console.log(i);
     console.log("Runing cars...");
     enemyCar[i].createEnemyCar();
     stop[i] = setInterval(enemyCar[i].moveEnemy, 10);
   }
 }
-
-//moving obstacles
-// function moveObstacles(oT, oB) {
-//   let left = parseInt(oT.style.left);
-//   oT.style.left = left - obstacleSpeed + "px";
-//   oB.style.left = left - obstacleSpeed + "px";
-//   let l = parseInt(oT.style.left);
-//   if (l < 0) {
-//     return true;
-//   }
-// }
 
 // starting the game
 function playGame() {
