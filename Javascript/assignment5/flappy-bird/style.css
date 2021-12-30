@@ -3,6 +3,9 @@
   padding: 0px;
   box-sizing: border-box;
 }
+body {
+  background-color: rgb(238, 245, 245);
+}
 
 #city {
   position: absolute;
@@ -68,7 +71,7 @@
 }
 .gameScreen {
   width: 400px;
-  border: 1px solid black;
+  border: 3px solid rgb(6, 109, 75);
   background-color: rgb(119, 175, 197);
   margin: 10px auto;
   height: 570px;
