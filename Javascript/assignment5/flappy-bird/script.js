@@ -207,5 +207,5 @@ function gameover() {
 // let restart = document.querySelector("#restart");
 // restart.addEventListener("click", () => {
 //   menuEnd.classList.add("remove");
-//   menuStart.classList.remove("remove");
+//  /   menuStart.classList.remove("remove");
 // });
