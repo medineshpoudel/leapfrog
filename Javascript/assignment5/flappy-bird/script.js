@@ -55,28 +55,26 @@ function Bird() {
 
 //creating the pipes
 function Pipe() {
-  let self = this;
-  this.pipeWidth = 55;
-  this.startPostion = 410;
+  this.pipeWidth = 65;
+  this.startPostion = 460;
 
   this.create = function (position) {
     let pipeUp = document.createElement("div");
     pipeUp.setAttribute("id", "pipeUp");
-    pipeUp.style.width = self.pipeWidth + "px";
+    pipeUp.style.width = this.pipeWidth + "px";
     let pipeHeight = randomHeight[randInt(0, randomHeight.length)];
     pipeUp.style.height = pipeHeight + "px";
-    pipeUp.style.left = position + self.startPostion + "px";
+    pipeUp.style.left = position + this.startPostion + "px";
     pipeUp.style.top = 0 + "px";
-
     pipeUpArr.push(pipeUp);
     game.appendChild(pipeUp);
 
     let pipeSpace = 90;
     let pipeDown = document.createElement("div");
     pipeDown.setAttribute("id", "pipeDown");
-    pipeDown.style.width = self.pipeWidth + "px";
+    pipeDown.style.width = this.pipeWidth + "px";
     pipeDown.style.height = 470 - (pipeHeight + pipeSpace) + "px";
-    pipeDown.style.left = position + self.startPostion + "px";
+    pipeDown.style.left = position + this.startPostion + "px";
     pipeDown.style.top = pipeHeight + pipeSpace + "px";
     pipeDownArr.push(pipeDown);
     game.appendChild(pipeDown);
@@ -88,8 +86,8 @@ function startGame() {
   playing = true;
   menuStart.classList.add("remove");
   gameScreen.classList.remove("remove");
-  let b = new Bird();
-  game.insertAdjacentElement("afterbegin", b.create());
+  let brd = new Bird();
+  game.insertAdjacentElement("afterbegin", brd.create());
 
   let position = 0;
   for (let x = 0; x < 500; x++) {
@@ -165,8 +163,8 @@ function playGame() {
 
     for (let i = 0; i < 50; i++) {
       pipesMove(pipeU[i], pipeD[i]);
-      let l = parseInt(pipeU[i].style.left);
-      if (l === 35) {
+      let pipeleft = parseInt(pipeU[i].style.left);
+      if (pipeleft === 40) {
         scre++;
         score.innerText = `${scre}`;
       }
