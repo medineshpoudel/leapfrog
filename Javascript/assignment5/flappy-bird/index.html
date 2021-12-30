@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Flappy Bird</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="menuStart">
+        <h1>Flappy Bird</h1>
+        <h2>Press Space To Play</h2>
+        <button id="start" class="btn">START</button>
+      </div>
+
+      <div class="gameScreen remove">
+        <div class="score"><span id="score">0</span></div>
+        <div class="game">
+          <div id="city"></div>
+          <div id="base"></div>
+        </div>
+      </div>
+      <div class="menuEnd remove">
+        <h1>Game Over</h1>
+        <h2>Score: <span id="scoreSum"></span></h2>
+        <button id="start" class="btn">START</button>
+        <!-- <button id="restart" class="btn">Restart</button> -->
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
