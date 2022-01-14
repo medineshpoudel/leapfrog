@@ -1,8 +1,7 @@
-// let ebX = enemiesPosition[0].x - 50;
-// let ebY = enemiesPosition[0].y;
-
 let abX = [200, 200, 200, 200, 200, 200, 200, 200];
 let abY = [80, 80, 80, 90, 80, 80, 80, 80];
+
+// creating enemy bullets
 let enemybullet = {
   sX: 94,
   sY: 7,
@@ -53,6 +52,7 @@ let enemybullet = {
   },
 };
 
+// creating enemy bullets for level 2 enemy
 let abTwoX = [200, 300, 200, 300, 300, 300];
 let abTwoY = [65, 65, 35, 35, 35, 35];
 let enemyTwobullet = {
@@ -96,17 +96,11 @@ let enemyTwobullet = {
           if (health == 0) {
             deathAudio.play();
           }
-          // abTwoX = [200];
-          // abTwoY = [80];
         }
-        // }, 30);
       }
     }
   },
 };
-// setInterval(() => {
-//   Enemybullet.draw();
-// }, 100);
 
 function reset() {
   ctx.drawImage(sprite, a, 0, 300, 600, 0, 0, 400, 400);

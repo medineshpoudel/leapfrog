@@ -59,4 +59,3 @@ window.addEventListener("keydown", (e) => {
     }, 50);
   }
 });
-// playerJump.jump();

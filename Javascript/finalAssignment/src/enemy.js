@@ -1,5 +1,5 @@
 let enemies = [];
-
+// creating multiple enemies at multiple positions
 var enemiesPosition = [
   { x: 330, y: 80 },
   { x: 455, y: 80 },
@@ -18,7 +18,7 @@ var enemiesPosition = [
 let enemyX = 160;
 let enemyY = 0;
 
-// ctx.drawImage(sprite, a, 0, 300, 600, 0, 0, 400, 400);
+// enemy object
 let enemy = {
   draw: function () {
     for (i = 0; i < enemiesPosition.length; i++) {
@@ -34,8 +34,6 @@ let enemy = {
       ) {
         enemiesPosition[i].y = 400;
         enemyHit.play();
-
-        // console.log("ok");
       }
       if (playerMove.x <= enemiesPosition[i].x - 180) {
         ctx.drawImage(
@@ -90,6 +88,7 @@ let enemy = {
   },
 };
 
+// enemies for level 2
 var enemiesTwoPosition = [
   { x: 250, y: 40 },
   { x: 720, y: 55 },
@@ -101,6 +100,7 @@ var enemiesTwoPosition = [
   { x: 3140, y: 40 },
   { x: 3490, y: 40 },
 ];
+// level 2 enemy object
 let enemyTwo = {
   draw: function () {
     for (i = 0; i < enemiesTwoPosition.length; i++) {
@@ -167,8 +167,3 @@ let enemyTwo = {
     }
   },
 };
-// function draw() {
-//   // ctx.fillRect(0, 0, canvas.width, canvas.height);
-//   playerTwoMove.draw();
-//   enemy.draw();
-// }

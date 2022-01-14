@@ -1,4 +1,5 @@
 let addNo = 200;
+// creating enemies at different positions
 let enemyMovePosition = [
   { x: 330 + addNo, y: 10 },
   // { x: 400 + addNo, y: 80 },
@@ -13,6 +14,7 @@ let enemyMovePosition = [
   // { x: 4400, y: 80 },
 ];
 
+// moving the enemies
 let enemyMove = {
   animation: [
     // { sX: 0, sY: 43 },
@@ -60,8 +62,6 @@ let enemyMove = {
         enemyMovePosition[i].y = 400;
         enemyMovePosition[i].x = 5000;
         enemyHit.play();
-
-        // console.log("ok");
       }
       if (
         enemyMovePosition[i].x <= playerMove.x ||
@@ -78,34 +78,3 @@ let enemyMove = {
     this.frame = this.frame % this.animation.length;
   },
 };
-
-// function enemyMovement() {
-//   for (i = 0; i < enemyMovePosition.length; i++) {
-//     let intvl = setInterval(() => {
-//       enemyMovePosition[i].x -= 2;
-//       enemyMove.update();
-//       if (x >= enemyMovePosition[i].x) {
-//         clearInterval(intvl);
-//         enemyMovePosition[i].x = 300;
-//         // enemyMove.y = 300;
-//         setInterval(() => {
-//           enemyMovePosition[i].x -= 2;
-//           enemyMove.update();
-//         }, 100);
-//       }
-//       if (enemyMovePosition[i].x < playerMove.x + 50) {
-//
-
-//
-//           enemyMove.y -= 2;
-//           enemyMovePosition[i].x -= 5;
-//           if (enemyMove.y < 40) {
-//             clearInterval(intvll);
-//           }
-//         }, 50);
-//       }
-//     }, 20);
-//   }
-// }
-
-// enemyMovement();

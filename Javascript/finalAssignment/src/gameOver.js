@@ -1,15 +1,16 @@
 let gameStart = new Image();
 gameStart.src = "images/gameStart.jpg";
 let gameStartX = 300;
+// drawing starting scrren
 let startGame = {
   sX: 0,
   sY: 0,
-
   draw: function () {
     ctx.drawImage(gameStart, 0, 0, 1200, 900, gameStartX, 0, 300, 190);
   },
 };
 
+// selecting the game state/ single or multiplayer
 canvas.addEventListener("click", (e) => {
   let canvasX = e.offsetX;
   let canvasY = e.offsetY;

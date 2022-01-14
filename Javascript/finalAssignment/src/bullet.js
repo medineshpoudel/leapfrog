@@ -3,6 +3,8 @@ let bPositionX = 94;
 let bPositionY = 7;
 let bC = 9;
 let bW = 14;
+
+// level 1 player bullet
 let bullet = {
   sX: bPositionX,
   sY: bPositionY,
@@ -24,7 +26,7 @@ let bullet = {
     );
   },
 };
-
+// level two player bullet
 let bulletTwo = {
   sX: bPositionX,
   sY: bPositionY,
@@ -50,6 +52,9 @@ let bulletTwo = {
 let timeInterval = 0;
 let keysPressed = [];
 
+// event listerners for bullets
+
+// when player shoots down
 window.addEventListener("keydown", (event) => {
   keysPressed[event.key] = true;
   // look down and shoot
@@ -57,11 +62,9 @@ window.addEventListener("keydown", (event) => {
     bulletAudio.play();
     setTimeout(() => {
       let intvl = setInterval(() => {
-        // ctx.drawImage(sprite, a, 0, 300, 600, 0, 0, 400, 400);
         reset();
         bulletTwo.draw();
         bullet.draw();
-        // bullet.y = playerMove.y + 5;
         bulletTwo.y += 1;
         bullet.y += 1;
         bulletTwo.x += 3;
@@ -72,7 +75,6 @@ window.addEventListener("keydown", (event) => {
           bullet.y = playerMove.y + 7;
           bulletTwo.x = playerTwoMove.x + 22;
           bulletTwo.y = playerTwoMove.y + 7;
-          // ctx.drawImage(sprite, a, 0, 300, 600, 0, 0, 400, 400);
         }
       }, 10);
     }, timeInterval);
@@ -80,15 +82,15 @@ window.addEventListener("keydown", (event) => {
     if (timeInterval > 100) {
       timeInterval = 100;
     }
+    // when player shoots down
   } else if (keysPressed["a"] && event.key == "f") {
     bulletAudio.play();
     setTimeout(() => {
       let intvl = setInterval(() => {
         reset();
-        // ctx.drawImage(sprite, a, 0, 300, 600, 0, 0, 400, 400);
         reset();
         bullet.draw();
-        // bullet.y = playerMove.y + 5;
+
         bullet.y += 1;
         bulletTwo.y += 1;
         bulletTwo.x += 1;
@@ -101,7 +103,6 @@ window.addEventListener("keydown", (event) => {
           bulletTwo.y = playerTwoMove.y + 7;
 
           reset();
-          // ctx.drawImage(sprite, a, 0, 300, 600, 0, 0, 400, 400);
         }
       }, 10);
     }, timeInterval);
@@ -115,14 +116,11 @@ window.addEventListener("keydown", (event) => {
     setTimeout(() => {
       let intvl = setInterval(() => {
         reset();
-        // ctx.drawImage(sprite, a, 0, 300, 600, 0, 0, 400, 400);
         bullet.draw();
-        // bullet.y = playerMove.y + 5;
         bullet.y -= 1;
         bullet.x += 3;
         bulletTwo.x += 3;
         bulletTwo.y -= 1;
-        // x += 5;
         if (bullet.y <= 0) {
           clearInterval(intvl);
           bullet.x = playerMove.x + 5;
@@ -130,7 +128,6 @@ window.addEventListener("keydown", (event) => {
           bulletTwo.x = playerTwoMove.x + 22;
           bulletTwo.y = playerTwoMove.y + 7;
           reset();
-          // ctx.drawImage(sprite, a, 0, 300, 600, 0, 0, 400, 400);
         }
       }, 10);
     }, timeInterval);
@@ -144,21 +141,17 @@ window.addEventListener("keydown", (event) => {
     bulletAudio.play();
     setTimeout(() => {
       let intvl = setInterval(() => {
-        // ctx.drawImage(sprite, a, 0, 300, 600, 0, 0, 400, 400);
         reset();
         bullet.draw();
         bulletTwo.draw();
         bullet.y = playerMove.y + 5;
         bulletTwo.x += 3;
-
         bullet.x += 3;
         if (bullet.x >= 300) {
           clearInterval(intvl);
           bullet.x = playerMove.x + 10;
           bulletTwo.x = playerTwoMove.x + 22;
           bulletTwo.y = playerTwoMove.y + 7;
-          // ctx.drawImage(sprite, a, 0, 300, 600, 0, 0, 400, 400);s
-          // reset();
         }
       }, 10);
     }, timeInterval);

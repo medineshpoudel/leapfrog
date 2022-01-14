@@ -15,6 +15,7 @@ a = 0;
 let state = false;
 let moveSound = new Audio("sounds/move.wav");
 
+// creating player for lvl1
 let playerMove = {
   animation: [
     { sX: 0, sY: 7 },
@@ -51,9 +52,6 @@ let playerMove = {
   },
 
   moveRight: function () {
-    console.log(a);
-    console.log(this.y);
-
     dropDown(1390, 1430, 110, 50);
     dropDown(1400, 1410, 80, 50);
     dropDown(1847, 1865, 50, 30);
@@ -87,14 +85,18 @@ let playerMove = {
     dropDown(2870, 2890, 110, 73);
     dropDown(2870, 2890, 110, 71);
     dropDown(2870, 2890, 110, 72);
+    dropDown(2990, 3010, 120, 90);
     dropDown(3090, 3120, 110, 70);
     dropDown(3217, 3230, 70, 50);
     dropDown(3217, 3230, 70, 50);
     dropDown(3256, 3266, 90, 70);
     dropDown(3256, 3266, 90, 73);
     dropDown(3280, 3290, 100, 91);
+    console.log(a);
+    console.log(this.y);
     if (this.y >= 115) {
       state = false;
+      a = 0;
       deathAudio.play();
     }
 
@@ -132,6 +134,7 @@ let playerMove = {
         }
       }, 10);
     }
+    // jumpung player at different positions
     playerJump(0, 1320, 50, 50);
     playerJump(1310, 1400, 30, 50);
     playerJump(1464, 1525, 30, 81);
@@ -158,7 +161,6 @@ let playerMove = {
     playerJump(2485, 2550, 50, 92);
     playerJump(2550, 2580, 50, 50);
     playerJump(2581, 2610, 30, 50);
-
     playerJump(2580, 2600, 70, 50);
     playerJump(2622, 2643, 50, 80);
     playerJump(2622, 2643, 50, 81);
@@ -191,6 +193,7 @@ let playerMove = {
   },
 };
 
+// creating player for level2
 let playerTwoMove = {
   animation: [
     { sX: 0, sY: 7 },
@@ -241,16 +244,6 @@ let playerTwoMove = {
     playerTwodropDown(1680, 1690, 80, 70);
     playerTwodropDown(1770, 1780, 110, 80);
     playerTwodropDown(1905, 1915, 50, 30);
-    // playerTwodropDown(2040, 2045, 80, 50);
-
-    // if ((a >= 2163) & (a <= 2168)) {
-    //   let intvl = setInterval(() => {
-    //     this.y += 1;
-    //     if (this.y >= 70 || a >= 2202) {
-    //       clearInterval(intvl);
-    //     }
-    //   }, 50);
-    // }
   },
   moveLeft: function () {
     this.x -= 1;
@@ -262,33 +255,7 @@ let playerTwoMove = {
     ctx.drawImage(sleepSprite, 0, 0, 30, 35, this.x, this.y + 10, 45, 25);
   },
   jump: function () {
-    //   if (a > 1330 && a < 2190) {
-    //     let intvl = setInterval(() => {
-    //       this.y -= 1;
-    //       if (this.y <= 10) {
-    //         clearInterval(intvl);
-    //         let intvll = setInterval(() => {
-    //           this.y += 1;
-    //           if (this.y >= 30) {
-    //             clearInterval(intvll);
-    //           }
-    //         }, 15);
-    //       }
-    //     }, 10);
-    //   } else {
-    //     let intvl = setInterval(() => {
-    //       this.y -= 1;
-    //       if (this.y <= 10) {
-    //         clearInterval(intvl);
-    //         let intvll = setInterval(() => {
-    //           this.y += 1;
-    //           if (this.y >= 50) {
-    //             clearInterval(intvll);
-    //           }
-    //         }, 15);
-    //       }
-    //     }, 10);
-    //   }
+    // jumping player two at different positions
     playerTwoJump(0, 15, 70, 70);
     playerTwoJump(10, 110, 50, 80);
     playerTwoJump(111, 130, 50, 110);
@@ -318,19 +285,6 @@ let playerTwoMove = {
     playerTwoJump(1775, 1845, 30, 110);
     playerTwoJump(1845, 1875, 50, 110);
     playerTwoJump(1900, 3900, 50, 50);
-    // playerTwodropDown(10, 21, 80, 70);
-    // playerTwodropDown(111, 120, 110, 80);
-    // playerTwodropDown(141, 150, 70, 50);
-    // playerTwodropDown(207, 215, 90, 70);
-    // playerTwodropDown(300, 307, 110, 90);
-    // playerTwodropDown(558, 570, 80, 50);
-    // playerTwodropDown(687, 700, 90, 50);
-    // playerTwodropDown(909, 917, 70, 50);
-    // playerTwodropDown(1038, 1045, 70, 50);
-    // playerTwodropDown(1422, 1435, 70, 50);
-    // playerTwodropDown(1680, 1690, 80, 70);
-    // playerTwodropDown(1770, 1780, 110, 80);
-    // playerTwodropDown(1905, 1915, 50, 30);
   },
 };
 
@@ -408,7 +362,6 @@ window.addEventListener("keydown", (e) => {
     let int = 0;
 
     let intvl = setInterval(() => {
-      // ctx.drawImage(sprite, a, 0, 300, 600, 0, 0, 400, 400);
       int++;
 
       if (int > 200) {
@@ -420,7 +373,6 @@ window.addEventListener("keydown", (e) => {
 
 window.addEventListener("keydown", (e) => {
   if (e.keyCode === 83) {
-    // ctx.drawImage(sprite, a, 0, 300, 600, 0, 0, 400, 400);
     playerMove.sleep();
     playerMove.frame == -2;
   }
@@ -429,7 +381,6 @@ window.addEventListener("keydown", (e) => {
 let dropDown = function (l, r, range, y) {
   if ((a >= l) & (a <= r) & (playerMove.y == y)) {
     let intvl = setInterval(() => {
-      // ctx.drawImage(sprite, a, 0, 300, 600, 0, 0, 400, 400);
       playerMove.y += 1;
       if (playerMove.y >= range) {
         clearInterval(intvl);
@@ -440,7 +391,6 @@ let dropDown = function (l, r, range, y) {
 let playerTwodropDown = function (l, r, range, y) {
   if ((a >= l) & (a <= r) & (playerTwoMove.y == y)) {
     let intvl = setInterval(() => {
-      // ctx.drawImage(sprite, a, 0, 300, 600, 0, 0, 400, 400);
       playerTwoMove.y += 1;
       if (playerTwoMove.y > range - 2) {
         clearInterval(intvl);
@@ -484,12 +434,6 @@ let playerJump = function (l, r, range, y) {
   }
 };
 
-// if ((a >= l) & (a <= r) & (playerTwoMove.y == y)) {
-//   let intvl = setInterval(() => {
-//     // ctx.drawImage(sprite, a, 0, 300, 600, 0, 0, 400, 400);
-//     playerTwoMove.y += 1;
-//     if (playerTwoMove.y > range - 2) {
-//       clearInterval(intvl);
-//     }
-//   }, 50);
-// }
+function reset() {
+  ctx.drawImage(sprite, a, 0, 300, 600, 0, 0, 400, 400);
+}

@@ -1,6 +1,8 @@
 let bulletBooster = new Image();
 bulletBooster.src = "images/bulletBooster.png";
 let health = 3;
+
+// creating the health bar
 let healthBar = {
   draw: function () {
     if (health == 3) {
@@ -13,6 +15,8 @@ let healthBar = {
     }
   },
 };
+
+// creating health booster
 let boosterSound = new Audio("sounds/booster.wav");
 let boosterPositionX = 100;
 let boosterPositionY = 50;
