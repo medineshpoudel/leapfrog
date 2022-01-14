@@ -13,9 +13,9 @@ let healthBar = {
     }
   },
 };
-let boosterSound = new Audio("/sounds/booster.wav");
-let boosterPositionX = 2900;
-let boosterPositionY = 70;
+let boosterSound = new Audio("sounds/booster.wav");
+let boosterPositionX = 100;
+let boosterPositionY = 50;
 let healthBooster = {
   draw: function () {
     ctx.drawImage(
@@ -46,12 +46,25 @@ let healthBooster = {
   },
 };
 
-let bulletBoost = {
-  draw: function () {
-    // bPositionX = 180;
-    // bPositionY = 0;
-    // bC = 7;
-    // bW = 15;
-    // ctx.drawImage(sprites, bPositionX, bPositionY, 5, 20, 200, 40, 15, 30);
-  },
-};
+// let boosterX = 100;
+// let boosterY = 50;
+// let bulletBoost = {
+//   draw: function () {
+//     ctx.drawImage(bulletBooster, 355, 0, 30, 40, boosterX, boosterY, 50, 30);
+//   },
+//   boost: function () {
+//     if (
+//       (bullet.x >= boosterX) &
+//       (bullet.x < boosterX + 20) &
+//       (bullet.y + 20 > boosterY) &
+//       (bullet.y - 20 < boosterY)
+//     ) {
+//       boosterSound.play();
+//       bPositionX = 24;
+//       console.log(bPositionX);
+//       bPositionY = 7;
+
+//       boosterY = 400;
+//     }
+//   },
+// };

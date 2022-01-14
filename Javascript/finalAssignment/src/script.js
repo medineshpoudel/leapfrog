@@ -13,7 +13,7 @@ ctx.fillStyle = "black";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 a = 0;
 let state = false;
-let moveSound = new Audio("/sounds/move.wav");
+let moveSound = new Audio("sounds/move.wav");
 
 let playerMove = {
   animation: [
@@ -53,18 +53,34 @@ let playerMove = {
   moveRight: function () {
     console.log(a);
     console.log(this.y);
+
+    dropDown(1390, 1430, 110, 50);
     dropDown(1400, 1410, 80, 50);
-    dropDown(1847, 1855, 50, 30);
-    dropDown(2040, 2045, 80, 50);
+    dropDown(1847, 1865, 50, 30);
+    dropDown(1847, 1865, 50, 31);
+    dropDown(2035, 2060, 120, 52);
+    dropDown(2035, 2060, 120, 51);
+    dropDown(2035, 2060, 120, 50);
     dropDown(2163, 2200, 60, 30);
     dropDown(2260, 2300, 70, 50);
+    dropDown(2037, 2139, 120, 50);
     dropDown(2356, 2370, 90, 70);
     dropDown(2356, 2370, 110, 71);
     dropDown(2390, 2420, 70, 50);
+    dropDown(2390, 2420, 70, 51);
+    dropDown(2425, 2455, 70, 111);
+    dropDown(2425, 2455, 70, 110);
     dropDown(2480, 2520, 90, 70);
     dropDown(2480, 2520, 90, 71);
+    dropDown(2550, 2640, 120, 91);
+    dropDown(2550, 2640, 120, 90);
+    dropDown(2640, 2690, 50, 30);
     dropDown(2620, 2625, 80, 50);
     dropDown(2745, 2755, 70, 50);
+    dropDown(2225, 2295, 120, 71);
+    dropDown(2225, 2295, 120, 70);
+    dropDown(2355, 2420, 120, 71);
+    dropDown(2355, 2420, 120, 70);
     dropDown(2745, 2755, 70, 51);
     dropDown(2740, 2755, 70, 50);
     dropDown(2870, 2890, 110, 70);
@@ -77,6 +93,10 @@ let playerMove = {
     dropDown(3256, 3266, 90, 70);
     dropDown(3256, 3266, 90, 73);
     dropDown(3280, 3290, 100, 91);
+    if (this.y >= 115) {
+      state = false;
+      deathAudio.play();
+    }
 
     if ((a >= 2163) & (a <= 2168)) {
       let intvl = setInterval(() => {
@@ -112,33 +132,61 @@ let playerMove = {
         }
       }, 10);
     }
+    playerJump(0, 1320, 50, 50);
+    playerJump(1310, 1400, 30, 50);
+    playerJump(1464, 1525, 30, 81);
+    playerJump(1464, 1525, 30, 80);
+    playerJump(1330, 1525, 30, 80);
+    playerJump(1845, 1985, 50, 50);
+    playerJump(1845, 1985, 50, 51);
+    playerJump(2169, 2193, 70, 73);
+    playerJump(2169, 2193, 70, 71);
+    playerJump(2169, 2193, 70, 70);
+    playerJump(2190, 2229, 50, 70);
+    playerJump(2190, 2230, 50, 72);
+    playerJump(2425, 2455, 70, 111);
+    playerJump(2425, 2455, 70, 110);
+    playerJump(2190, 2230, 50, 73);
+    playerJump(2190, 2230, 50, 71);
+    playerJump(2300, 2355, 50, 71);
+    playerJump(2300, 2355, 50, 70);
+    playerJump(2300, 2355, 50, 71);
+    playerJump(2424, 2480, 70, 71);
+    playerJump(2424, 2480, 70, 70);
+    playerJump(2485, 2550, 50, 91);
+    playerJump(2485, 2550, 50, 90);
+    playerJump(2485, 2550, 50, 92);
+    playerJump(2550, 2580, 50, 50);
+    playerJump(2581, 2610, 30, 50);
 
     playerJump(2580, 2600, 70, 50);
-    playerJump(2622, 2643, 30, 80);
-    playerJump(2622, 2643, 30, 81);
+    playerJump(2622, 2643, 50, 80);
+    playerJump(2622, 2643, 50, 81);
     playerJump(2644, 2664, 50, 80);
     playerJump(2745, 2865, 70, 70);
     playerJump(2745, 2865, 70, 71);
     playerJump(2745, 2865, 70, 72);
     playerJump(2745, 2865, 70, 73);
     playerJump(2850, 2980, 90, 113);
+    playerJump(2850, 2980, 90, 112);
     playerJump(2850, 2980, 90, 111);
     playerJump(2950, 3030, 70, 90);
     playerJump(3030, 3330, 50, 110);
+    playerJump(3030, 3087, 50, 70);
 
-    let intvl = setInterval(() => {
-      this.y -= 1;
+    // let intvl = setInterval(() => {
+    //   this.y -= 1;
 
-      if (this.y <= 10) {
-        clearInterval(intvl);
-        let intvll = setInterval(() => {
-          this.y += 1;
-          if (this.y >= 50) {
-            clearInterval(intvll);
-          }
-        }, 15);
-      }
-    }, 10);
+    //   if (this.y <= 10) {
+    //     clearInterval(intvl);
+    //     let intvll = setInterval(() => {
+    //       this.y += 1;
+    //       if (this.y >= 50) {
+    //         clearInterval(intvll);
+    //       }
+    //     }, 15);
+    //   }
+    // }, 10);
   },
 };
 
@@ -294,7 +342,7 @@ function loop() {
 }
 loop();
 
-var startAudio = new Audio("/sounds/title.mp3");
+var startAudio = new Audio("sounds/title.mp3");
 window.addEventListener("keydown", (e) => {
   if (e.keyCode === 68) {
     playerMove.moveRight();

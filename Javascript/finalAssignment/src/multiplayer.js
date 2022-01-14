@@ -1,13 +1,13 @@
 let multiplayerCount = false;
 let multiplayer = {
   animation: [
-    { sX: 0, sY: 7 },
-    { sX: 0, sY: 43 },
-    { sX: 18, sY: 43 },
-    { sX: 37, sY: 43 },
-    { sX: 57.5, sY: 43 },
-    { sX: 76, sY: 43 },
-    { sX: 94, sY: 43 },
+    { sX: 235, sY: 7 },
+    { sX: 205, sY: 43 },
+    { sX: 228, sY: 43 },
+    { sX: 245, sY: 43 },
+    { sX: 267, sY: 43 },
+    { sX: 286, sY: 43 },
+    { sX: 305, sY: 43 },
   ],
   x: 80,
   y: 50,

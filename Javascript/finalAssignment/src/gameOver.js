@@ -13,10 +13,8 @@ let startGame = {
 canvas.addEventListener("click", (e) => {
   let canvasX = e.offsetX;
   let canvasY = e.offsetY;
-  console.log(canvasY);
 
   if ((canvasX > 90) & (canvasX < 300) & (canvasY > 400) & (canvasY < 445)) {
-    console.log("clicked");
     state = true;
   }
   if ((canvasX > 90) & (canvasX < 325) & (canvasY > 460) & (canvasY < 500)) {
@@ -37,9 +35,10 @@ function draw() {
         }
       }, 300);
       multiplayerCount = false;
+      playerMove.y = 50;
       health = 3;
       a = 0;
-      boosterPositionX = 2900;
+      boosterPositionX = 1480;
       playerMove.x = 40;
       playerMove.y = 50;
       enemiesPosition = [
@@ -78,6 +77,7 @@ function draw() {
       ebY = [80, 80];
     } else if (state == true) {
       reset();
+
       bullet.draw();
 
       // playerJump.draw();
@@ -89,7 +89,8 @@ function draw() {
       healthBar.draw();
       healthBooster.draw();
       healthBooster.boost();
-      bulletBoost.draw();
+      // bulletBoost.draw();
+      // bulletBoost.boost();
       if (multiplayerCount == true) {
         multiplayer.draw();
         mbullet.draw();
