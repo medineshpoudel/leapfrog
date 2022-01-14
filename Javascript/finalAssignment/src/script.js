@@ -168,6 +168,7 @@ let playerMove = {
     playerJump(2745, 2865, 70, 72);
     playerJump(2745, 2865, 70, 73);
     playerJump(2850, 2980, 90, 113);
+    playerJump(2850, 2980, 90, 110);
     playerJump(2850, 2980, 90, 112);
     playerJump(2850, 2980, 90, 111);
     playerJump(2950, 3030, 70, 90);
